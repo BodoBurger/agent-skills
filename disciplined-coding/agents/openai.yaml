@@ -1,0 +1,4 @@
+interface:
+  display_name: "Disciplined Coding"
+  short_description: "Make code changes simple, surgical, and verifiable"
+  default_prompt: "Use $disciplined-coding to implement this coding task with explicit assumptions, minimal changes, and verification."
