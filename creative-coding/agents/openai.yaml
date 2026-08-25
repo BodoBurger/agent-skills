@@ -1,0 +1,7 @@
+interface:
+  display_name: "Creative Coding"
+  short_description: "Creative autonomous software development"
+  default_prompt: "Use $creative-coding to build this idea creatively and add useful complementary features."
+
+policy:
+  allow_implicit_invocation: false
