@@ -53,5 +53,6 @@ $hard-cut replace the legacy configuration format and remove the old runtime fal
 
 | Skill | Description |
 | --- | --- |
+| [`creative-coding`](./creative-coding/) | Builds and evolves software with creative autonomy, sensible assumptions, and useful complementary features. Runs only when explicitly invoked with `$creative-coding`. |
 | [`disciplined-coding`](./disciplined-coding/) | Keeps implementation and review work simple, surgical, assumption-aware, and tied to verifiable success criteria. |
 | [`hard-cut`](./hard-cut/) | Enforces one canonical implementation when new behavior replaces old behavior, removing obsolete compatibility and fallback paths unless a verified contract requires them. |
