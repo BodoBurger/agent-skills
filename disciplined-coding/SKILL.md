@@ -1,11 +1,15 @@
 ---
 name: disciplined-coding
-description: Apply disciplined software-engineering behavior before and during code changes by surfacing assumptions and ambiguity, choosing the simplest sufficient implementation, keeping diffs surgical, and defining and verifying success criteria. Use for implementing features, fixing bugs, refactoring, reviewing changes, or any task that modifies an existing codebase where correctness, scope control, and minimal complexity matter.
+description: Apply disciplined software-engineering behavior to substantial or risk-sensitive code changes by surfacing assumptions and ambiguity, choosing the simplest sufficient implementation, keeping diffs surgical, and defining and verifying success criteria. Use for non-trivial refactoring, complex bug fixes, multi-file features, or reviews where correctness, scope control, and verification warrant additional rigor. Do not auto-invoke for trivial, low-risk edits unless explicitly requested.
 ---
 
 # Disciplined Coding
 
 Optimize for the smallest verified change that satisfies the user's actual goal. Apply all four principles throughout the task.
+
+## Fast Path for Trivial Changes
+
+For trivial, low-risk changes, minimize process overhead. Skip explicit planning, new test creation, broad repository inspection, and broad validation unless they are necessary to make or verify the requested change. Inspect only the files and context required, make the smallest change, run the narrowest useful check when needed, and stop when the goal is met.
 
 ## 1. Think Before Coding
 
@@ -44,7 +48,7 @@ Use this test: Would an experienced maintainer consider the solution overcomplic
 - For a bug fix, first reproduce the failure with a focused test when feasible, then make it pass.
 - For validation or behavior changes, write or update tests that demonstrate the requested cases when feasible.
 - For refactoring, establish that behavior passes before and after the change.
-- For multi-step work, state a brief plan in this form:
+- For multi-step work that is not covered by the trivial-change fast path, state a brief plan in this form:
 
   1. `[Step]` -> verify: `[specific check]`
   2. `[Step]` -> verify: `[specific check]`
