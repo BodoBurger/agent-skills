@@ -16,7 +16,9 @@ Apply a hard-cut policy when new behavior supersedes old behavior. Keep one cano
 - Treat historical local state as non-authoritative only after verifying that it is ephemeral or rebuildable, or that the user authorized invalidating it.
 - Separate runtime compatibility from one-time data conversion. Use a forward or offline migration when needed to preserve valid data while keeping one canonical runtime format.
 - Do not destroy, reset, rewrite, or abandon user-owned, shared, or production data without explicit authorization.
-- Treat public APIs, deployed clients, storage and retention requirements, versioned protocols, and deployment constraints as possible compatibility requirements even when the user did not mention them. Do not infer that no requirement exists from silence.
+- Check whether public APIs, deployed clients, storage and retention requirements, versioned protocols, or deployment constraints create a concrete compatibility requirement. Preserve transition support only when that requirement is explicitly requested or verified; do not infer it from silence.
+- Do not add compatibility for hypothetical stale clients, version skew, downgrades, unknown consumers, or future migration needs. Require concrete evidence that such support is needed.
+- Implement the hard cut directly. Do not introduce migration frameworks, transition orchestration, compatibility abstractions, or telemetry solely for removed behavior when a simple replacement or documented reset is sufficient.
 - Update contracts, validation, flags, constants, and configuration in one canonical location. Do not preserve parallel policy logic.
 - Fail fast with actionable diagnostics when state, inputs, or contracts do not match the canonical format. Do not silently mutate or delete invalid state.
 - Prefer explicit operator or user recovery steps over runtime fallback logic.
