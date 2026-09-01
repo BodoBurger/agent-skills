@@ -2,3 +2,6 @@ interface:
   display_name: "Hard Cut"
   short_description: "Enforce one canonical path with safe cutovers"
   default_prompt: "Use $hard-cut to replace old behavior with one canonical path and identify any required cutover safeguards."
+
+policy:
+  allow_implicit_invocation: false
