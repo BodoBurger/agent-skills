@@ -1,6 +1,6 @@
 ---
 name: hard-cut
-description: "Enforce a hard-cut policy when explicitly selected for a change that replaces old behavior with one canonical implementation. Remove obsolete compatibility, fallback, adapter, and dual-behavior code unless transition support is explicitly requested or required by a verified external contract."
+description: "Enforce a hard-cut policy when a change replaces old behavior with one canonical implementation. Remove obsolete compatibility, fallback, adapter, and dual-behavior code unless transition support is explicitly requested or required by a verified external contract. Use only when existing behavior is actually superseded, not merely because a task touches configuration, schemas, routing, contracts, or architecture."
 ---
 
 # Hard-Cut Policy
