@@ -37,7 +37,7 @@ Codex detects installed skills automatically. If newly installed or updated skil
 Codex can use a skill in two ways:
 
 - **Explicitly:** mention it in your prompt with `$skill-name`, for example `$disciplined-coding`. In the Codex CLI or IDE extension, `/skills` shows the available skills.
-- **Implicitly:** describe a task that matches the skill's purpose. Codex may select the relevant skill automatically.
+- **Implicitly:** describe a task that matches the skill's purpose. Codex may select the relevant skill automatically unless the skill disables implicit invocation.
 
 Example prompts:
 
