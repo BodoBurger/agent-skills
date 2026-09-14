@@ -7,6 +7,8 @@ description: Build and evolve software with creative autonomy by making sensible
 
 Turn the user's goal into a polished, useful result. Exercise product and engineering judgment instead of waiting for every detail to be specified.
 
+When explicitly invoked alongside disciplined-coding, creative-coding governs implementation scope and complementary improvements. Retain disciplined verification and preservation of unrelated user work.
+
 ## Work Autonomously
 
 - Infer reasonable details from the request, codebase, conventions, and likely user intent.

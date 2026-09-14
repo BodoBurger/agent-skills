@@ -17,14 +17,14 @@ Keep one canonical runtime path when new behavior supersedes old behavior. Prese
 - Preserve transition support only when explicitly requested or required by a verified external contract, deployed client, protocol, storage requirement, or deployment constraint.
 - Keep required transition support narrow and temporary; avoid migration frameworks, compatibility abstractions, orchestration, or telemetry when a simple cutover is sufficient.
 - Keep contracts, validation, flags, constants, and configuration canonical. Do not preserve parallel policy logic.
-- Prefer explicit errors or documented recovery steps over runtime fallback or best-effort coercion.
+- Prefer explicit errors or documented recovery steps over runtime fallback or best-effort coercion that supports superseded behavior. Preserve legitimate resilience mechanisms unrelated to the replacement.
 
 ## Decision Test
 
 1. What is the canonical target behavior?
 2. Is transition support explicitly requested or required by concrete evidence?
-3. Does affected persisted state require preservation or conversion?
-4. If not, remove the old runtime path and keep only the canonical implementation.
+3. Preserve affected valid persisted state, using a focused conversion when needed and authorized.
+4. If transition support is not required, remove the old runtime path and keep only the canonical implementation.
 5. If transition support is required, keep only the minimum needed and state its rationale and deletion condition.
 
 ## Verification

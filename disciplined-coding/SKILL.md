@@ -15,7 +15,7 @@ For trivial, low-risk changes, minimize process overhead. Skip explicit planning
 
 - Read the relevant code, tests, repository instructions, and surrounding contracts before editing.
 - State assumptions that materially affect the implementation.
-- When a request has multiple plausible interpretations, present the meaningful alternatives and their consequences. Ask before proceeding if the choice materially changes behavior, scope, risk, or architecture.
+- Resolve ambiguity from the request, existing conventions, and prior authorization when possible. Ask only when an unresolved decision materially affects behavior, scope, risk, or architecture; explain the meaningful alternatives and their consequences.
 - For low-impact ambiguity, choose the least-invasive interpretation, state it briefly, and continue.
 - Surface contradictions, missing information, and uncertainty instead of hiding them.
 - Push back when the request conflicts with the codebase, creates avoidable risk, or has a materially simpler solution. Explain the tradeoff concisely.
@@ -48,11 +48,7 @@ Use this test: Would an experienced maintainer consider the solution overcomplic
 - For a bug fix, first reproduce the failure with a focused test when feasible, then make it pass.
 - For validation or behavior changes, write or update tests that demonstrate the requested cases when feasible.
 - For refactoring, establish that behavior passes before and after the change.
-- For multi-step work that is not covered by the trivial-change fast path, state a brief plan in this form:
-
-  1. `[Step]` -> verify: `[specific check]`
-  2. `[Step]` -> verify: `[specific check]`
-
+- For multi-step work that benefits from a plan, briefly describe the intended changes and how success will be verified. Use prose or a list as appropriate.
 - Work until the criteria are satisfied. Run focused checks first, then broader checks proportional to the risk.
 - If a check cannot be run, state exactly what remains unverified and why.
 - Stop when the requested goal is met; do not expand the task with optional improvements.
