@@ -15,7 +15,7 @@ Keep one canonical runtime path when new behavior supersedes old behavior. Prese
 - Distinguish runtime compatibility from one-time data conversion. Use a focused conversion only when valid persisted data must be preserved.
 - Do not destroy, reset, rewrite, or abandon user-owned, shared, or production data without explicit authorization.
 - Preserve transition support only when explicitly requested or required by a verified external contract, deployed client, protocol, storage requirement, or deployment constraint.
-- Keep required transition support narrow and temporary; avoid migration frameworks, compatibility abstractions, orchestration, or telemetry when a simple cutover is sufficient.
+- Keep required compatibility narrow. For temporary support, state its removal condition; otherwise document the continuing contract. Avoid migration frameworks, compatibility abstractions, orchestration, or telemetry when a simple cutover is sufficient.
 - Keep contracts, validation, flags, constants, and configuration canonical. Do not preserve parallel policy logic.
 - Prefer explicit errors or documented recovery steps over runtime fallback or best-effort coercion that supports superseded behavior. Preserve legitimate resilience mechanisms unrelated to the replacement.
 
@@ -25,12 +25,13 @@ Keep one canonical runtime path when new behavior supersedes old behavior. Prese
 2. Is transition support explicitly requested or required by concrete evidence?
 3. Preserve affected valid persisted state, using a focused conversion when needed and authorized.
 4. If transition support is not required, remove the old runtime path and keep only the canonical implementation.
-5. If transition support is required, keep only the minimum needed and state its rationale and deletion condition.
+5. If compatibility is required, keep only the minimum needed and state its rationale and either its removal condition or the continuing contract that requires it.
 
 ## Verification
 
 - Verify the changed behavior with the smallest relevant checks first.
+- Where relevant, verify that retired inputs or formats fail clearly and cannot silently enter a legacy path.
 - Search for old identifiers or branches only when they are directly related to the removed behavior.
 - Run broader tests or inspect broader repository context only when the change risk justifies it.
 - Remove obsolete tests, fixtures, docs, flags, telemetry, and identifiers only when they exist solely for the removed path.
-- Report any invalidated state, required conversion or recovery steps, and unavoidable temporary compatibility code.
+- Report any invalidated state, required conversion or recovery steps, and required compatibility code.
